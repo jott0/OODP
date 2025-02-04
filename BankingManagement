@@ -1,297 +1,298 @@
-include <iostream> 
-#include <string> 
-using namespace std; 
-class Account{ 
-private: 
-string username,password; 
-string Firstname; 
-string Lastname; 
-string address; 
-long accno; 
-float trans; 
-float balance; 
-float amount,amt; 
-string acc[2][2] = { {"amar", "ak123"} }; 
-string Fname = "Amarjot"; 
-string Lname = "Kaur"; 
-string add = "17street"; 
-long no = 8894369874; 
-float bal = 30000; 
-public: 
-int login (){ 
-cout<<"Enter username: "; 
-cin>>username;  
-cout<<"Enter password: "; 
-cin>> password; 
-if (username == acc[0][0] && password == acc[0][1]){ 
-cout << "LOGGED IN SUCCESSFULLY!!" << endl; 
-return 1; 
-} 
-else{ 
-cout << "WRONG CREDENTIALS!!" << endl; 
-return 0; 
-} 
-} 
-void createAccount(){ 
-cout<<"Enter your Firstname: "; 
-cin>>Firstname; 
-cout<<"Enter your Lastname: "; 
-12 
-13 
- 
-        cin>>Lastname; 
-        cout<<"Enter your address: "; 
- 
-        cin>>address; 
-        cout<<"Enter your account number: "; 
-        cin>>accno; 
-        cout<<"Enter the initial balance: Rs. "; 
-        cin>>balance; 
-        cout<<"BANK ACCOUNT CREATED SUCCESSFULLY!!"<<endl; 
-    } 
-    void accdetails(){ 
-        cout<<"FIRSTNAME: "<<Firstname<<endl; 
-        cout<<"LASTNAME: "<<Lastname<<endl; 
-        cout<<"ADDRESS: "<<address<<endl; 
-        cout<<"ACCOUNT NUMBER: "<<accno<<endl; 
-        cout<<"BALANCE: Rs. "<<balance<<endl; 
-    } 
-    void existing(){ 
-        cout << "FIRSTNAME: " << Fname << endl; 
-        cout << "LASTNAME: " << Lname << endl; 
-        cout << "ADDRESS: " << add << endl; 
-        cout << "ACCOUNT NUMBER: " << no << endl; 
-        cout << "BALANCE: Rs. " << bal << endl; 
-    } 
-    void with(){ 
-        cout<<"Amount you wish to withdraw: Rs. "; 
-        cin>>amt; 
-        if (bal<amt) 
-        { 
-            cout<<"BALANCE INSUFFICIENT!! CANNOT WITHDRAW!!"<<endl; 
-        } 
-        else 
-        { 
-            cout<<"AMOUNT OF Rs. "<<amt<<" HAS BEEN WITHDRAWED 
-SUCCESSFULLY!"<<endl; 
-            bal=bal-amt; 
-        } 
-    } 
-    void displaybal(){ 
-        cout<<"------------------------------------"<<endl; 
-        cout<<"             BALANCE                "<<endl; 
-        cout<<"------------------------------------"<<endl; 
-        cout<<"BALANCE REMAINING:"<<bal<<endl; 
-void disbal(){ 
-cout<<"------------------------------------"<<endl; 
-cout<<"             BALANCE                "<<endl; 
-cout<<"------------------------------------"<<endl; 
-cout<<"BALANCE REMAINING:"<<balance<<endl;    
-} 
-void withdraw(){ 
-cout<<"Amount you wish to withdraw: Rs. "; 
-cin>>amount; 
-if (balance<amount) 
-{ 
-cout<<"BALANCE INSUFFICIENT!! CANNOT WITHDRAW!!"<<endl; 
-} 
-else 
-{ 
-cout<<"AMOUNT OF Rs. "<<amount<<" HAS BEEN WITHDRAWED 
-SUCCESSFULLY!"<<endl; 
-balance=balance-amount; 
-} 
-} 
-void dep(){ 
-cout<<"Amount you wish to deposit: Rs. "; 
-cin>>amt; 
-cout<<"AMOUNT OF Rs. "<<amt<<" HAS BEEN DEPOSITED 
-SUCCESSFULLY!"<<endl; 
-bal=bal+amt; 
-} 
-void deposit(){ 
-cout<<"Amount you wish to deposit: Rs. "; 
-cin>>amount; 
-cout<<"AMOUNT OF Rs. "<<amount<<" HAS BEEN DEPOSITED 
-SUCCESSFULLY!"<<endl; 
-balance=balance+amount; 
-} 
-void tr(){ 
-int acno; 
-cout<<"Enter the account number: "; 
-cin>>acno; 
-cout<<"Enter the amount to be transferred: Rs. "; 
-cin>>trans; 
-if (bal<trans){ 
-cout<<"BALANCE INSUFFICIENT!! CANNOT TRANSFER MONEY !!"<<endl; 
-14 
-} 
-else{ 
-cout<<"AMOUNT OF Rs. "<<trans<<" HAS BEEN TRANSFERRED TO THE 
-ACCOUNT "<<acno<<" SUCCESSFULLY!!"<<endl; 
-bal=bal-trans; 
-} 
-} 
-void transfer(){ 
-int acno; 
-cout<<"Enter the account number: "; 
-cin>>acno; 
-cout<<"Enter the amount to be transferred: Rs. "; 
-cin>>trans; 
-if (balance<trans){ 
-cout<<"BALANCE INSUFFICIENT!! CANNOT TRANSFER MONEY !!"<<endl; 
-} 
-else{ 
-cout<<"AMOUNT OF Rs. "<<trans<<" HAS BEEN TRANSFERRED TO THE 
-ACCOUNT "<<acno<<" SUCCESSFULLY!!"<<endl; 
-balance=balance-trans; 
-} 
-} 
-void done(){ 
-cout<<"------------------------------------------------"<<endl; 
-cout<<"             THANK YOU FOR VISITING!!
-           "<<endl; 
-cout<<"------------------------------------------------"<<endl;        
-} 
-}; 
-int main(){ 
-char choice; 
-int ch,cho; 
-int b,d,w; 
-Account account; 
-cout<<"----------------------------------------"<<endl; 
-cout<<"************WELCOME TO BANK*************"<<endl; 
-cout<<"----------------------------------------"<<endl; 
-cout<<"A. LOGIN.."<<endl; 
-cout<<"B. CREATE NEW ACCOUNT."<<endl; 
-cout<<"C. EXIT."<<endl; 
-int c=1; 
-while(c==1){ 
-cout<<"ENTER YOUR CHOICE: "; 
-cin>>choice; 
-        switch (choice){ 
-            case 'A': 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"                     LOGIN                         "<<endl; 
-            cout<<"--------------------------------------------"<<endl; 
-            w=account.login(); 
-            if(w==1){ 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"                   MAIN MENU                "<<endl; 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"1. SHOW ACCOUNT DETAILS."<<endl; 
-            cout<<"2. WITHDRAW MONEY."<<endl; 
-            cout<<"3. DEPOSIT MONEY."<<endl; 
-            cout<<"4. TRANSFER MONEY."<<endl; 
-            cout<<"5. DISPLAY BALANCE."<<endl; 
-            cout<<"6. EXIT."<<endl; 
-            b=1; 
-            while(b==1){ 
-                cout<<"ENTER YOUR CHOICE: "; 
-                cin>>ch; 
-                switch(ch){ 
-                    case 1: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                ACCOUNT DETAILS             "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.existing(); 
-                    break; 
-                    case 2: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                MONEY WITHDRAWAL            "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.with(); 
-                    break; 
-                    case 3: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                  MONEY DEPOSIT             "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.dep(); 
-                    break; 
-                    case 4: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                  MONEY TRANSFER            "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.tr(); 
-                    break; 
-                    case 5: 
-                    account.displaybal(); 
-                    break; 
-                    case 6: 
-                    account.done(); 
-                    b=2; 
-                    break; 
-                    default: 
-                    cout<<"INVALID CHOICE.PLEASE TRY AGAIN!"<<endl; 
-                    break; 
-                } 
-            } 
-            } 
-            break; 
-            case 'B': 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"              CREATING NEW ACCOUNT          "<<endl; 
-            cout<<"--------------------------------------------"<<endl; 
-            account.createAccount(); 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"                   MAIN MENU                "<<endl; 
-            cout<<"--------------------------------------------"<<endl; 
-            cout<<"1. SHOW ACCOUNT DETAILS."<<endl; 
-            cout<<"2. WITHDRAW MONEY."<<endl; 
-            cout<<"3. DEPOSIT MONEY."<<endl; 
-            cout<<"4. TRANSFER MONEY."<<endl; 
-            cout<<"5. DISPLAY BALANCE."<<endl; 
-            cout<<"6. EXIT."<<endl; 
-            d=1; 
-            while(d==1){ 
-                cout<<"ENTER YOUR CHOICE: "; 
-                cin>>cho; 
-                switch(cho){ 
-                    case 1: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                ACCOUNT DETAILS             "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.accdetails(); 
-                    break; 
-                    case 2: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                MONEY WITHDRAWAL            "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.withdraw(); 
-                    break; 
-                    case 3: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                  MONEY DEPOSIT             "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.deposit(); 
-                    break; 
-                    case 4: 
-                    cout<<"--------------------------------------------"<<endl; 
-                    cout<<"                  MONEY TRANSFER            "<<endl; 
-                    cout<<"--------------------------------------------"<<endl; 
-                    account.transfer(); 
-                    break; 
-                    case 5: 
-                    account.disbal(); 
-                    break; 
-                    case 6: 
-                    account.done(); 
-                    d=2; 
-                    break; 
-                    default: 
-                    cout<<"INVALID CHOICE.PLEASE TRY AGAIN!"<<endl; 
-                    break; 
-                } 
-            } 
-            break; 
-            case 'C': 
-            account.done(); 
-            c=2; 
-            break; 
-            default: 
-            cout<<"INVALID! PLEASE TRY AGAIN!"<<endl; 
-            break; 
-        } 
-    } 
-    return 0; 
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+private:
+    string username, password;
+    string Firstname;
+    string Lastname;
+    string address;
+    long accno;
+    float trans;
+    float balance;
+    float amount, amt;
+    string acc[2][2] = { {"amar", "ak123"} };
+    string Fname = "Amarjot";
+    string Lname = "Kaur";
+    string add = "17street";
+    long no = 8894369874;
+    float bal = 30000;
+
+public:
+    int login() {
+        cout << "Enter username: ";
+        cin >> username;
+        cout << "Enter password: ";
+        cin >> password;
+
+        if (username == acc[0][0] && password == acc[0][1]) {
+            cout << "LOGGED IN SUCCESSFULLY!!" << endl;
+            return 1;
+        }
+        else {
+            cout << "WRONG CREDENTIALS!!" << endl;
+            return 0;
+        }
+    }
+
+    void createAccount() {
+        cout << "Enter your Firstname: ";
+        cin >> Firstname;
+        cout << "Enter your Lastname: ";
+        cin >> Lastname;
+        cout << "Enter your address: ";
+        cin >> address;
+        cout << "Enter your account number: ";
+        cin >> accno;
+        cout << "Enter the initial balance: Rs. ";
+        cin >> balance;
+        cout << "BANK ACCOUNT CREATED SUCCESSFULLY!!" << endl;
+    }
+
+    void accdetails() {
+        cout << "FIRSTNAME: " << Firstname << endl;
+        cout << "LASTNAME: " << Lastname << endl;
+        cout << "ADDRESS: " << address << endl;
+        cout << "ACCOUNT NUMBER: " << accno << endl;
+        cout << "BALANCE: Rs. " << balance << endl;
+    }
+
+    void existing() {
+        cout << "FIRSTNAME: " << Fname << endl;
+        cout << "LASTNAME: " << Lname << endl;
+        cout << "ADDRESS: " << add << endl;
+        cout << "ACCOUNT NUMBER: " << no << endl;
+        cout << "BALANCE: Rs. " << bal << endl;
+    }
+
+    void with() {
+        cout << "Amount you wish to withdraw: Rs. ";
+        cin >> amt;
+        if (bal < amt) {
+            cout << "BALANCE INSUFFICIENT!! CANNOT WITHDRAW!!" << endl;
+        }
+        else {
+            cout << "AMOUNT OF Rs. " << amt << " HAS BEEN WITHDRAWED SUCCESSFULLY!" << endl;
+            bal = bal - amt;
+        }
+    }
+
+    void displaybal() {
+        cout << "------------------------------------" << endl;
+        cout << "             BALANCE                " << endl;
+        cout << "------------------------------------" << endl;
+        cout << "BALANCE REMAINING:" << bal << endl;
+    }
+
+    void disbal() {
+        cout << "------------------------------------" << endl;
+        cout << "             BALANCE                " << endl;
+        cout << "------------------------------------" << endl;
+        cout << "BALANCE REMAINING:" << balance << endl;
+    }
+
+    void withdraw() {
+        cout << "Amount you wish to withdraw: Rs. ";
+        cin >> amount;
+        if (balance < amount) {
+            cout << "BALANCE INSUFFICIENT!! CANNOT WITHDRAW!!" << endl;
+        }
+        else {
+            cout << "AMOUNT OF Rs. " << amount << " HAS BEEN WITHDRAWED SUCCESSFULLY!" << endl;
+            balance = balance - amount;
+        }
+    }
+
+    void dep() {
+        cout << "Amount you wish to deposit: Rs. ";
+        cin >> amt;
+        cout << "AMOUNT OF Rs. " << amt << " HAS BEEN DEPOSITED SUCCESSFULLY!" << endl;
+        bal = bal + amt;
+    }
+
+    void deposit() {
+        cout << "Amount you wish to deposit: Rs. ";
+        cin >> amount;
+        cout << "AMOUNT OF Rs. " << amount << " HAS BEEN DEPOSITED SUCCESSFULLY!" << endl;
+        balance = balance + amount;
+    }
+
+    void tr() {
+        int acno;
+        cout << "Enter the account number: ";
+        cin >> acno;
+        cout << "Enter the amount to be transferred: Rs. ";
+        cin >> trans;
+        if (bal < trans) {
+            cout << "BALANCE INSUFFICIENT!! CANNOT TRANSFER MONEY!!" << endl;
+        }
+        else {
+            cout << "AMOUNT OF Rs. " << trans << " HAS BEEN TRANSFERRED TO THE ACCOUNT " << acno << " SUCCESSFULLY!!" << endl;
+            bal = bal - trans;
+        }
+    }
+
+    void transfer() {
+        int acno;
+        cout << "Enter the account number: ";
+        cin >> acno;
+        cout << "Enter the amount to be transferred: Rs. ";
+        cin >> trans;
+        if (balance < trans) {
+            cout << "BALANCE INSUFFICIENT!! CANNOT TRANSFER MONEY!!" << endl;
+        }
+        else {
+            cout << "AMOUNT OF Rs. " << trans << " HAS BEEN TRANSFERRED TO THE ACCOUNT " << acno << " SUCCESSFULLY!!" << endl;
+            balance = balance - trans;
+        }
+    }
+
+    void done() {
+        cout << "------------------------------------------------" << endl;
+        cout << "             THANK YOU FOR VISITING!!" << endl;
+        cout << "------------------------------------------------" << endl;
+    }
+};
+
+int main() {
+    char choice;
+    int ch, cho;
+    int b, d, w;
+    Account account;
+    cout << "----------------------------------------" << endl;
+    cout << "************WELCOME TO BANK*************" << endl;
+    cout << "----------------------------------------" << endl;
+    cout << "A. LOGIN.." << endl;
+    cout << "B. CREATE NEW ACCOUNT." << endl;
+    cout << "C. EXIT." << endl;
+    int c = 1;
+    while (c == 1) {
+        cout << "ENTER YOUR CHOICE: ";
+        cin >> choice;
+        switch (choice) {
+            case 'A':
+                cout << "--------------------------------------------" << endl;
+                cout << "                     LOGIN                         " << endl;
+                cout << "--------------------------------------------" << endl;
+                w = account.login();
+                if (w == 1) {
+                    cout << "--------------------------------------------" << endl;
+                    cout << "                   MAIN MENU                " << endl;
+                    cout << "--------------------------------------------" << endl;
+                    cout << "1. SHOW ACCOUNT DETAILS." << endl;
+                    cout << "2. WITHDRAW MONEY." << endl;
+                    cout << "3. DEPOSIT MONEY." << endl;
+                    cout << "4. TRANSFER MONEY." << endl;
+                    cout << "5. DISPLAY BALANCE." << endl;
+                    cout << "6. EXIT." << endl;
+                    b = 1;
+                    while (b == 1) {
+                        cout << "ENTER YOUR CHOICE: ";
+                        cin >> ch;
+                        switch (ch) {
+                            case 1:
+                                cout << "--------------------------------------------" << endl;
+                                cout << "                ACCOUNT DETAILS             " << endl;
+                                cout << "--------------------------------------------" << endl;
+                                account.existing();
+                                break;
+                            case 2:
+                                cout << "--------------------------------------------" << endl;
+                                cout << "                MONEY WITHDRAWAL            " << endl;
+                                cout << "--------------------------------------------" << endl;
+                                account.with();
+                                break;
+                            case 3:
+                                cout << "--------------------------------------------" << endl;
+                                cout << "                  MONEY DEPOSIT             " << endl;
+                                cout << "--------------------------------------------" << endl;
+                                account.dep();
+                                break;
+                            case 4:
+                                cout << "--------------------------------------------" << endl;
+                                cout << "                  MONEY TRANSFER            " << endl;
+                                cout << "--------------------------------------------" << endl;
+                                account.tr();
+                                break;
+                            case 5:
+                                account.displaybal();
+                                break;
+                            case 6:
+                                account.done();
+                                b = 2;
+                                break;
+                            default:
+                                cout << "INVALID CHOICE.PLEASE TRY AGAIN!" << endl;
+                                break;
+                        }
+                    }
+                }
+                break;
+            case 'B':
+                cout << "--------------------------------------------" << endl;
+                cout << "              CREATING NEW ACCOUNT          " << endl;
+                cout << "--------------------------------------------" << endl;
+                account.createAccount();
+                cout << "--------------------------------------------" << endl;
+                cout << "                   MAIN MENU                " << endl;
+                cout << "--------------------------------------------" << endl;
+                cout << "1. SHOW ACCOUNT DETAILS." << endl;
+                cout << "2. WITHDRAW MONEY." << endl;
+                cout << "3. DEPOSIT MONEY." << endl;
+                cout << "4. TRANSFER MONEY." << endl;
+                cout << "5. DISPLAY BALANCE." << endl;
+                cout << "6. EXIT." << endl;
+                d = 1;
+                while (d == 1) {
+                    cout << "ENTER YOUR CHOICE: ";
+                    cin >> cho;
+                    switch (cho) {
+                        case 1:
+                            cout << "--------------------------------------------" << endl;
+                            cout << "                ACCOUNT DETAILS             " << endl;
+                            cout << "--------------------------------------------" << endl;
+                            account.accdetails();
+                            break;
+                        case 2:
+                            cout << "--------------------------------------------" << endl;
+                            cout << "                MONEY WITHDRAWAL            " << endl;
+                            cout << "--------------------------------------------" << endl;
+                            account.withdraw();
+                            break;
+                        case 3:
+                            cout << "--------------------------------------------" << endl;
+                            cout << "                  MONEY DEPOSIT             " << endl;
+                            cout << "--------------------------------------------" << endl;
+                            account.deposit();
+                            break;
+                        case 4:
+                            cout << "--------------------------------------------" << endl;
+                            cout << "                  MONEY TRANSFER            " << endl;
+                            cout << "--------------------------------------------" << endl;
+                            account.transfer();
+                            break;
+                        case 5:
+                            account.disbal();
+                            break;
+                        case 6:
+                            account.done();
+                            d = 2;
+                            break;
+                        default:
+                            cout << "INVALID CHOICE.PLEASE TRY AGAIN!" << endl;
+                            break;
+                    }
+                }
+                break;
+            case 'C':
+                account.done();
+                c = 2;
+                break;
+            default:
+                cout << "INVALID! PLEASE TRY AGAIN!" << endl;
+                break;
+        }
+    }
+    return 0;
 }
